@@ -1,0 +1,19 @@
+h1 {
+    color: purple;
+    font-size: 38px;
+}
+
+body {
+    padding: 60px;
+}
+
+.young {
+    color: green;
+}
+
+button {
+    color: black;
+    background: aqua;
+    border-width: 19px;
+    border-color: beige;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{#<link rel="stylesheet" href="/static/css/site.css">#}
+<link rel="stylesheet" href="{% static 'css/site.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img height="100" src="{% static 'imgs/cat.jpg' %}" alt="IMAGE IS MISSING!">
+
+<h1>{{ title }}</h1>
+
+{% if tasks_count == 0 %}
+    <h2>NO tasks.</h2>
+{% else %}
+    <h2>There are {{ tasks_count }} tasks.</h2>
+{% endif %}
+
+<form action="/" method="get">
+    <input
+            type="text"
+            name="title_filter"
+            value="{{ title_filter }}"
+            placeholder="Enter a filter value"
+    >
+    <button>FILTER</button>
+</form>
+
+<ul style="young">
+    {% for task in tasks_list %}
+        <li>
+            <h3>{{ task.title }}</h3>
+            <p>{{ task.description }}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

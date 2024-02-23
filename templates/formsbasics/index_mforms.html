@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+</head>
+<body>
+
+    <h1>Create an employee form:</h1>
+{#    <form action="/forms/mf/" method="post"> ## not good to set hard coded URLs#}
+    <form action=""{% url 'index_mforms' %} method="post">
+        {% csrf_token %}
+        {{ employee_model_form.as_p }}
+        <button>SEND</button>
+    </form>
+
+    <h2>These are my employees:</h2>
+    <ul>
+        {% for e in employees_list %}
+            <li> {{ e.full_name }} (pk={{ e.pk }}) has role number: {{ e.role }}
+            <a href="{% url "update_employee" pk=e.pk %}">EDIT</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+
+
+{#    <hr>#}
+{##}
+{#    <h1>This is a normal form</h1>#}
+{#    <form action="/forms" method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ employee_normal_form.as_p }}#}
+{#    <button>SEND</button>#}
+{#    </form>#}
+
+
+</body>
+</html>

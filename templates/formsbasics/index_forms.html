@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+</head>
+<body>
+    <form action="/forms" method="post">
+    {% csrf_token %}
+    {{ employee_form.as_p }}
+    <button>SEND</button>
+    </form>
+
+
+
+
+{#PURE HTML FORM:#}
+{#<form action="/forms" method="post">#}
+{#    <input type="text" name="first_name">#}
+{#    <input type="number" name="age">#}
+{#    <input type="email" name="mail">#}
+{#    <input type="password" name="pass">#}
+{#    <input type="url" name="website">#}
+{#    <input type="radio" name="radio-test1">#}
+{#    <input type="radio" name="radio-test2">#}
+{#    <input type="checkbox" name="cb-test">#}
+{#    <textarea name="description"></textarea>#}
+{#    <select name="interests">#}
+{#        <option value="1">Sports</option>#}
+{#        <option value="2">Books</option>#}
+{#        <option value="3">Meth</option>#}
+{#    </select>#}
+{#    <button>SEND</button>#}
+{#</form>#}
+
+</body>
+</html>
